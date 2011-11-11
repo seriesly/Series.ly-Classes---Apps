@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Series.ly</string>
+    <string name="usuario">Usuario/Email</string>
+    <string name="pass">Contraseña</string>
+    <string name="login">login</string>
+    <string name="espere">Espere</string>
+    <string name="conectando">Conectando</string>
+    <string name="login_ko">No se ha podido conectar</string>
+    <string name="login_ok">Conectado correctamente</string>
+    <string name="series">Mis Series</string>
+    <string name="peliculas">Mis Películas</string>
+    <string name="buscar">Buscar Series</string>
+    <string name="buscar_pelis">Buscar Películas</string>
+    <string name="logout">Desconectar</string>
+</resources>

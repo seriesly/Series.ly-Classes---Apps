@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:background="@drawable/background_azul_mainmenu">
+    <ListView style="@style/styleLinearFrontal" android:layout_width="match_parent" android:numColumns="3" android:layout_height="match_parent" android:divider="#0000" android:dividerHeight="0dip" android:cacheColorHint="@color/blanco" android:id="@+id/lista" >
+        <!-- Preview: listitem=@layout/mainmenu_grid_item -->
+    </ListView>
+</LinearLayout>

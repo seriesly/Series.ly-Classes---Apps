@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/background_azul">
+	<ScrollView android:id="@+id/scrollView1"
+		android:layout_width="match_parent" android:layout_height="match_parent">
+		<LinearLayout android:id="@+id/linearLayout1"
+			android:layout_width="match_parent" android:layout_height="match_parent"
+			android:orientation="vertical" android:gravity="center">
+			<LinearLayout android:layout_height="wrap_content"
+				android:id="@+id/linearLayout5" android:layout_width="wrap_content"
+				android:layout_marginTop="15dip">
+				<ImageView android:src="@drawable/icon"
+					android:layout_width="wrap_content" android:id="@+id/imageView1"
+					android:layout_height="wrap_content"></ImageView>
+				<TextView android:id="@+id/textView3" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="@color/blanco"
+					android:shadowColor="@color/shadow" android:shadowRadius="1"
+					android:layout_gravity="center_vertical|bottom" android:text="series"
+					android:textSize="35dip" android:shadowDx="2" android:shadowDy="2"></TextView>
+				<TextView android:id="@+id/textView4" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="@color/blanco"
+					android:shadowColor="@color/shadow" android:shadowRadius="1"
+					android:text=".ly" android:textSize="20dip" android:shadowDx="2"
+					android:shadowDy="2" android:layout_marginTop="5dip"></TextView>
+			</LinearLayout>
+			<LinearLayout android:layout_height="wrap_content"
+				android:id="@+id/linearLayout2" android:orientation="vertical"
+				android:background="@drawable/background_blanco_borde_gris"
+				android:layout_width="match_parent" android:layout_marginLeft="10dip"
+				android:layout_marginRight="10dip">
+				<LinearLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content" android:id="@+id/linearLayout3">
+					<TextView android:id="@+id/textView1"
+						android:layout_height="wrap_content" android:text="@string/usuario"
+						android:layout_width="125dip" android:textColor="@color/font"></TextView>
+					<EditText android:layout_height="wrap_content"
+						android:layout_weight="1" android:layout_width="0dip"
+						android:background="@drawable/background_edittext" android:id="@+id/user" android:textSize="13dip"></EditText>
+				</LinearLayout>
+				<LinearLayout android:layout_width="match_parent"
+					android:layout_height="wrap_content" android:id="@+id/linearLayout4"
+					android:layout_marginBottom="10dip" android:layout_marginTop="5dip">
+					<TextView android:id="@+id/textView2"
+						android:layout_height="wrap_content" android:text="@string/pass"
+						android:layout_width="125dip" android:textColor="@color/font"></TextView>
+					<EditText android:inputType="textPassword"
+						android:layout_height="wrap_content" android:layout_weight="1"
+						android:layout_width="0dip" android:background="@drawable/background_edittext"
+						android:id="@+id/pass" android:textSize="13dip">
+					</EditText>
+				</LinearLayout>
+				<Button style="@style/styleBotonAzul" android:layout_gravity="center_horizontal" android:layout_height="wrap_content"
+					android:text="@string/login" android:id="@+id/login" android:layout_width="200dip"></Button>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

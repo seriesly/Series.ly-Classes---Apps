@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#DFDFDF</color>
+    <color name="blanco">#F7F7F7</color>
+    <color name="blanco_hueso">#EBEBEB</color>
+    <color name="blanco_fuerte">#C4C4C4</color>
+    <color name="blanco_hueso_fuerte">#B8B8B8</color>
+    <color name="font">#5C5C5C</color>
+    <color name="font_header">#063455</color>
+    <color name="azul">#1678BE</color>
+    <color name="shadow">#4000</color>
+    <color name="background_azul_oscuro">#4C6276</color>
+    <color name="background_azul_oscuro_mainmenu">#294f5e</color>
+    <color name="background_azul_claro">#7C9FBF</color>
+    <color name="border">#666</color>
+	<color name="fondo_transparente">#667C9FBF</color>
+	<color name="fondo_transparente_oscuro">#887C9FBF</color>
+	<color name="azul_row">#3F6F8F</color>
+</resources>
