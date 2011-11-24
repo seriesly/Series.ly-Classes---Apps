@@ -107,9 +107,9 @@ class seriesly
 	public function getSerieInfo($idSerie,$caps=1)
 	{
 		if(empty($this->user_token))
-			return json_decode($oAuth=$this->getURL($this->baseURL."detailoSerie.php?auth_token=".$this->auth_token."&idSerie=".$idSerie."&caps=".$caps."&format=".$this->format));
+			return json_decode($oAuth=$this->getURL($this->baseURL."detailSerie.php?auth_token=".$this->auth_token."&idSerie=".$idSerie."&caps=".$caps."&format=".$this->format));
 		else
-			return json_decode($oAuth=$this->getURL($this->baseURL."detailoSerie.php?auth_token=".$this->auth_token."&idSerie=".$idSerie."&caps=".$caps."&user_token=".$this->user_token."&format=".$this->format));
+			return json_decode($oAuth=$this->getURL($this->baseURL."detailSerie.php?auth_token=".$this->auth_token."&idSerie=".$idSerie."&caps=".$caps."&user_token=".$this->user_token."&format=".$this->format));
 	}
 	public function getCapsSerie($idSerie)
 	{
