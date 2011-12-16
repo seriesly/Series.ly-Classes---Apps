@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class Prefs {
 	public static final String TAG = "Prefs";
-	public static final String PREF_NAME = "pref_quis";
+	public static final String PREF_NAME = "pref_seriesly";
 
 	public static SharedPreferences get(Context context) {
 		try {

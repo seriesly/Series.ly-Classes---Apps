@@ -3,6 +3,7 @@ package com.rubengm.seriesly;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +27,7 @@ public class VerSerie extends Activity {
 	public static final String TAG = VerSerie.class.getName();
 	private Serie s;
 	private EpisodioAdapter adapter;
-	private boolean episodiosLeidos;
+//	private boolean episodiosLeidos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +41,21 @@ public class VerSerie extends Activity {
 			s = new Gson().fromJson(getIntent().getExtras().getString("serie"), Serie.class);
 			readSerie(s);
 			((TextView) findViewById(R.id.sinopsis)).setText("Descargando...");
-			final ExpandableListView lista = (ExpandableListView) findViewById(R.id.lista);
+			ExpandableListView lista = (ExpandableListView) findViewById(R.id.lista);
 			adapter = new EpisodioAdapter();
 			lista.setAdapter(adapter);
+			lista.setLongClickable(true);
+			lista.setOnChildClickListener(new OnChildClickListener() {
+				@Override
+				public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+					Log.i(TAG, "ChildClick: " + groupPosition + ", " + childPosition);
+					Episode e = adapter.getChild(groupPosition, childPosition);
+					Intent intent = new Intent(VerSerie.this, VerEpisodio.class);
+					intent.putExtra("episodioId", e.getIdc());
+					startActivity(intent);
+					return false;
+				}
+			});
 			new DatosSerie().execute();
 		} catch (Exception e) {
 			Log.e(TAG, "Error: " + e.getLocalizedMessage());
@@ -65,10 +79,6 @@ public class VerSerie extends Activity {
 			Log.e(TAG, "Error: " + e.getLocalizedMessage());
 		}
 		if(adapter != null) adapter.reload();
-		if(!episodiosLeidos) {
-			new EpisodiosSerie().execute();
-			episodiosLeidos = true;
-		}
 	}
 
 	@Override
@@ -125,18 +135,30 @@ public class VerSerie extends Activity {
 		public long getChildId(int groupPosition, int childPosition) {
 			return 0;
 		}
+		
+		private class ChildViewHolder {
+			TextView textLeft;
+			TextView text;
+		}
 
 		@Override
 		public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 			View v = convertView;
 			Episode e = getChild(groupPosition, childPosition);
+			ChildViewHolder holder;
 
 			if(v == null) {
 				v = View.inflate(VerSerie.this, R.layout.row_episodio, null);
+				holder = new ChildViewHolder();
+				holder.textLeft = ((TextView)v.findViewById(R.id.textLeft));
+				holder.text = ((TextView)v.findViewById(R.id.text));
+				v.setTag(holder);
+			} else {
+				holder = (ChildViewHolder) v.getTag();
 			}
 
-			((TextView)v.findViewById(R.id.textLeft)).setText(e.getSeason());
-			((TextView)v.findViewById(R.id.text)).setText(e.getTitle());
+			holder.textLeft.setText(e.getSeason());
+			holder.text.setText(e.getTitle());
 
 			return v;
 		}
@@ -160,15 +182,25 @@ public class VerSerie extends Activity {
 		public long getGroupId(int groupPosition) {
 			return 0;
 		}
+		
+		private class GroupViewHolder {
+			TextView text;
+		}
 
 		@Override
 		public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 			View v = convertView;
+			GroupViewHolder holder;
 			if(v == null) {
 				v = View.inflate(VerSerie.this, R.layout.row_temporada, null);
+				holder = new GroupViewHolder();
+				holder.text =  ((TextView)v.findViewById(R.id.text));
+				v.setTag(holder);
+			} else {
+				holder = (GroupViewHolder) v.getTag();
 			}
 			Temporada t = getGroup(groupPosition);
-			((TextView)v.findViewById(R.id.text)).setText(t.getTitle());
+			holder.text.setText(t.getTitle());
 			return v;
 		}
 
@@ -179,7 +211,7 @@ public class VerSerie extends Activity {
 
 		@Override
 		public boolean isChildSelectable(int groupPosition, int childPosition) {
-			return false;
+			return true;
 		}
 
 
@@ -191,6 +223,12 @@ public class VerSerie extends Activity {
 		@Override
 		protected void onPostExecute(Void result) {
 			readSerie(s);
+			/*
+			if(!episodiosLeidos) {
+				new EpisodiosSerie().execute();
+				episodiosLeidos = true;
+			}
+			*/
 			super.onPostExecute(result);
 		}
 
@@ -201,7 +239,7 @@ public class VerSerie extends Activity {
 		}
 
 	}
-
+/*
 	private class EpisodiosSerie extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -212,8 +250,9 @@ public class VerSerie extends Activity {
 
 		@Override
 		protected Void doInBackground(Void... arg0) {
-			s.setEpisode(FichaSerie.getEpisodios(VerSerie.this, s.getIdSerie()));
+			s.setEpisode(FichaSerie.getEpisodios(VerSerie.this, s));
 			return null;
 		}
 	}
+	*/
 }

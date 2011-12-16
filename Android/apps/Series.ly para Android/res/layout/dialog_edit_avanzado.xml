@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/background_blanco_borde_gris"
+        android:orientation="vertical"
+        android:padding="15dip" >
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:text="@string/editar_valor"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/font" />
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:background="@drawable/background_edittext"
+            android:inputType="textUri" >
+            <requestFocus />
+        </EditText>
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/background_boton_azul"
+                android:padding="10dip"
+                android:text="@string/ok" />
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dip"
+                android:layout_marginRight="3dip"
+                android:layout_weight="1"
+                android:background="@drawable/background_boton_azul"
+                android:padding="10dip"
+                android:text="@string/cancel" />
+            <Button
+                android:id="@+id/restore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_boton_azul"
+                android:padding="10dip"
+                android:text="@string/restore" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

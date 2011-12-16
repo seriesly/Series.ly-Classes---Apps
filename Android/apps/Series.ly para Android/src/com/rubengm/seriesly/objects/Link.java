@@ -8,7 +8,8 @@ public class Link {
 	private int hd = -1;
 	private String url_cineraculo = "";
 	private String url_megavideo = "";
-	
+	private String desc = null;
+
 	public Link() {
 		super();
 	}
@@ -56,5 +57,20 @@ public class Link {
 	@Override
 	public String toString() {
 		return new Gson().toJson(this);
+	}
+
+	public CharSequence getDescription() {
+		if(desc != null) {
+			return desc;
+		}
+		StringBuilder desc = new StringBuilder();
+		desc.append(language);
+		if(!"no".equals(subtitles)) {
+			desc.append(", Subtitulado: ");
+			desc.append(subtitles);
+		}
+		if(hd != 0) desc.append(", [HD]");
+		this.desc = desc.toString();
+		return desc.toString();
 	}
 }

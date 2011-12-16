@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_azul"
+        android:cacheColorHint="#0000"
+        android:divider="#3000"
+        android:dividerHeight="2dp" >
+        <!-- Preview: listitem=@layout/row_avanzado -->
+    </ListView>
+</LinearLayout>

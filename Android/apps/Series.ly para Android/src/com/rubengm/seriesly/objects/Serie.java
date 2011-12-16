@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 
 public class Serie {
 	private String idSerie;
+	private String ids;
 	private String title;
 	private int seasons;
 	private int episodes;
@@ -149,5 +150,13 @@ public class Serie {
 	public String toString() {
 		urlImageView = null;
 		return new Gson().toJson(this);
+	}
+
+	public void setIds(String ids) {
+		this.ids = ids;
+	}
+
+	public String getIds() {
+		return ids;
 	}
 }

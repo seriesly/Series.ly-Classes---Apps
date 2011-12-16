@@ -13,4 +13,9 @@
     <string name="buscar">Buscar Series</string>
     <string name="buscar_pelis">Buscar Películas</string>
     <string name="logout">Desconectar</string>
+    <string name="avanzado">Avanzado</string>
+    <string name="editar_valor">Editar el valor:</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="restore">Restaurar</string>
 </resources>

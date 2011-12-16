@@ -50,7 +50,10 @@ public class MainMenu extends Activity {
 					break;
 				case 3: //Buscar peliculas
 					break;
-				case 4: //Desconectar
+				case 4: //Avanzado
+					startActivity(new Intent(MainMenu.this, Avanzado.class));
+					break;
+				case 5: //Desconectar
 					Prefs.put(MainMenu.this, "logged_in", false);
 					intent = new Intent(MainMenu.this, Main.class);
 					startActivity(intent);
@@ -70,7 +73,7 @@ public class MainMenu extends Activity {
 	}
 	
 	private class MainMenuAdapter extends BaseAdapter {
-		private String[] acciones = new String[]{ getString(R.string.series), getString(R.string.peliculas), getString(R.string.buscar), getString(R.string.buscar_pelis), getString(R.string.logout) };
+		private String[] acciones = new String[]{ getString(R.string.series), getString(R.string.peliculas), getString(R.string.buscar), getString(R.string.buscar_pelis), getString(R.string.avanzado), getString(R.string.logout) };
 
 		@Override
 		public int getCount() {

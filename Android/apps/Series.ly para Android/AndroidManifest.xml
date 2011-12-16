@@ -13,28 +13,38 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
+            android:name=".Main"
             android:configChanges="orientation"
-            android:label="@string/app_name"
-            android:name=".Main" >
-            <intent-filter >
+            android:label="@string/app_name" >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainMenu"
             android:configChanges="orientation"
-            android:icon="@drawable/logo_big"
-            android:name=".MainMenu" >
+            android:icon="@drawable/logo_big" >
         </activity>
         <activity
+            android:name=".MisSeries"
             android:configChanges="orientation"
-            android:icon="@drawable/logo_big"
-            android:name=".MisSeries" >
+            android:icon="@drawable/logo_big" >
         </activity>
         <activity
+            android:name=".VerSerie"
             android:configChanges="orientation"
-            android:icon="@drawable/logo_big"
-            android:name=".VerSerie" >
+            android:icon="@drawable/logo_big" >
+        </activity>
+        <activity
+            android:name=".VerEpisodio"
+            android:configChanges="orientation"
+            android:icon="@drawable/logo_big" >
+        </activity>
+        <activity
+            android:name=".Avanzado"
+            android:configChanges="orientation"
+            android:icon="@drawable/logo_big" >
         </activity>
     </application>
 </manifest>
