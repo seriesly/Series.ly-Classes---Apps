@@ -1,0 +1,46 @@
+Este proyecto es el intento de portar al lenguaje python la API de series.ly
+
+Con este proyecto se entrengan 7 ficheros de python. Paso a comentarlos a continuación:
+
+Ally.py: es la API en si, la que contiene todas las funciones de la libreria
+Usuario.py: Representa a un objeto Usuario.
+Pelicula.py: Representa un objeto Pelicula.
+Serie.py: Representa a un objeto Serie.
+Ficha.py: Representa a un objeto Ficha.
+Comentario.py: Representa a un objeto Comentario.
+test.py: Son unos ejemplos de como usar
+la API de manera sencilla. Para que test.py funcione correctamente
+necesitáis modificar las variables: 
+
+usuario = ""
+contrasena = ""
+id_aplicacion = ""
+key_aplicacion = ""
+
+Con una información que sea válida.
+
+A parte en la carpeta doc/ se encuentra toda la documentación necesaria
+para programar con esta API, aún así la documentación no es todo lo extensa
+que debería (se irá ampliando con el tiempo), para las dudas que no puedan
+ser solucionadas con la documentación es mejor acudir a: http://seriesly.pbworks.com/w/page/41577970/Inicio
+
+VERSION:0.8
+
+Las principales diferencias de esta verisón con la 0.5
+es que aquí se implementan y se devuelve objetos y no datos
+en bruto y la implementación de excepciones.
+
+Ángel Luis Perales Gómez @ RdlP <angelluispg89@hotmail.com><angelluis.perales@um.es>
+
+Licencia:
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details at
+http://www.gnu.org/copyleft/gpl.html 
